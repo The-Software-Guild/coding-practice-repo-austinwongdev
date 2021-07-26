@@ -4,6 +4,7 @@
  * date: 7/26/21
  * purpose: Calculates the total cost of windows and trim based on user-input window size, material costs, and number of windows
  */
+
 package com.aaw.windowmaster;
 
 import java.util.Scanner;
