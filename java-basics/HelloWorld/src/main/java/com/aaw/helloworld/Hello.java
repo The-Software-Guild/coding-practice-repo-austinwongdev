@@ -10,5 +10,8 @@ package com.aaw.helloworld;
 public class Hello {
     public static void main(String[] args) {
         System.out.println("Hello, Austin!");
+        if (1 == 1)
+            System.out.println("Hm");
+            System.out.println("Two");
     }
 }
