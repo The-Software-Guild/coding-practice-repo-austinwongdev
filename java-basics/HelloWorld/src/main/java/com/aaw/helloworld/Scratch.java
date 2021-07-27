@@ -15,11 +15,7 @@ import java.util.Random;
  */
 public class Scratch {
     public static void main(String[] args){
-        Random rGen = new Random();
-        System.out.println(rGen.nextInt(5));
-        System.out.println(rGen.nextInt(5));
-        System.out.println(rGen.nextInt(5));
-        System.out.println(rGen.nextInt(5));
-        System.out.println(rGen.nextInt(5));
+        System.out.println(5/2);
+        System.out.println(6/2);
     }
 }
