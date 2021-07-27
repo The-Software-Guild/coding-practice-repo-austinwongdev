@@ -27,27 +27,27 @@ public class House {
     }
     
     public int getHouseNumber(){
-        return houseNumber;
+        return this.houseNumber;
     }
     
     public String getStreet(){
-        return street;
+        return this.street;
     }
     
     public int getZIP(){
-        return ZIP;
+        return this.ZIP;
     }
     
     public String getCity(){
-        return city;
+        return this.city;
     }
     
     public String getState(){
-        return state;
+        return this.state;
     }
     
     public String getLabel(){
-        return label;
+        return this.label;
     }
     
     public void setLabel(String label){
