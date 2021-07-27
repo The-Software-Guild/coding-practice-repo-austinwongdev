@@ -15,7 +15,10 @@ import java.util.Random;
  */
 public class Scratch {
     public static void main(String[] args){
-        System.out.println(5/2);
-        System.out.println(6/2);
+        int[] arr1 = {1,0,1};
+        int[] arr2 = {1,0,1};
+        for (int i = 0; i < arr1.length; i ++){
+            System.out.println(arr3[i]);
+        }
     }
 }
