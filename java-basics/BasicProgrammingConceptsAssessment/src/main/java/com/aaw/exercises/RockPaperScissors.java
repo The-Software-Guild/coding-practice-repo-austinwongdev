@@ -8,6 +8,13 @@
  *    *Display subtotal of results after each round
  *    *Create option for tiebreaker sudden-death
  *    *Reformat comments into Javadoc
+ * feedback:
+ *    *Do not go beyond requirements on your own
+ *       * Ask questions to remove assumptions
+ *    *Use unambiguous variable names (playRPS is ambiguous, playGame is better)
+ *    *Use static sparingly
+ *       * static is only required if the parent method that is calling the method is also static
+ *       * you can instantiate your class in the main method to get around calling other static methods
  */
 
 package com.aaw.exercises;
