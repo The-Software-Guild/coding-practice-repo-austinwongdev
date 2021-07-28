@@ -6,7 +6,8 @@
  * future optimizations:
  *    *Create custom exception for out of range int inputs
  *    *Display subtotal of results after each round
-*     *Create option for tiebreaker sudden-death
+ *    *Create option for tiebreaker sudden-death
+ *    *Reformat comments into Javadoc
  */
 
 package com.aaw.exercises;
