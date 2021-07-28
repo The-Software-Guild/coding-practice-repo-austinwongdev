@@ -1,3 +1,5 @@
+package com.aaw.classmodeling;
+
 /*
  * @author Austin Wong
  * email: austinwongdev@gmail.com
