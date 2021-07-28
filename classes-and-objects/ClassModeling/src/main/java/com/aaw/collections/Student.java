@@ -13,14 +13,19 @@ package com.aaw.collections;
  */
 public class Student {
     
+    private static int nextId = 0;
+    
     private String firstName;
     private String lastName;
-    private String fullName; 
+    private String fullName;
+    private int studentId;
     
     public Student(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
         this.fullName = firstName + " " + lastName;
+        this.studentId = nextId;
+        nextId += 1;
     }
     
     public String getFirstName(){
@@ -33,6 +38,10 @@ public class Student {
     
     public String getFullName(){
         return this.fullName;
+    }
+    
+    public int getStudentId(){
+        return this.studentId;
     }
     
 }

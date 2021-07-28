@@ -8,6 +8,7 @@
 package com.aaw.collections;
 
 import java.util.Scanner;
+import java.util.Map;
 
 /**
  *
@@ -21,10 +22,37 @@ public class UserIOImpl implements UserIO {
     }
     
     @Override
+    public void printHorizontalLine(int width){
+        String separator = "=";
+        this.print(separator.repeat(width));
+    }
+    
+    @Override
     public String readString(String prompt){
-        System.out.println(prompt);
+        this.print(prompt);
         Scanner scan = new Scanner(System.in);
         return scan.nextLine();
+    }
+    
+    @Override
+    public String readMenuString(Map<String, String> menu){
+        String userInput;
+        
+        do{
+            String menuTitle = "MENU";
+            this.print(menuTitle);
+            this.printHorizontalLine(menuTitle.length());
+            for (String option : menu.keySet()){
+                String outputLine = option + " - " + menu.get(option);
+                this.print(outputLine);
+            }
+            this.print("");
+            userInput = this.readString("Enter selection: ");
+        } while (!menu.containsKey(userInput));
+        
+        this.print("");
+        
+        return userInput;
     }
     
     @Override
@@ -32,11 +60,11 @@ public class UserIOImpl implements UserIO {
         int inputInt;
         while (true){
             try{
-                inputInt = Integer.parseInt(readString(prompt));
+                inputInt = Integer.parseInt(this.readString(prompt));
                 break;
             }
             catch (NumberFormatException ex){
-                System.out.println("Error: input not an integer.");
+                this.print("Error: input not an integer.");
             }
         }
         return inputInt;
@@ -58,11 +86,11 @@ public class UserIOImpl implements UserIO {
         double inputDouble;
         while (true){
             try{
-                inputDouble = Double.parseDouble(readString(prompt));
+                inputDouble = Double.parseDouble(this.readString(prompt));
                 break;
             }
             catch(NumberFormatException ex){
-                System.out.println("Error: input not a double.");
+                this.print("Error: input not a double.");
             }
         }
         return inputDouble;
@@ -84,11 +112,11 @@ public class UserIOImpl implements UserIO {
         float inputFloat;
         while (true){
             try{
-                inputFloat = Float.parseFloat(readString(prompt));
+                inputFloat = Float.parseFloat(this.readString(prompt));
                 break;
             }
             catch (NumberFormatException ex){
-                System.out.println("Error: input not a float.");
+                this.print("Error: input not a float.");
             }
         }
         return inputFloat;
@@ -110,11 +138,11 @@ public class UserIOImpl implements UserIO {
         long inputLong;
         while (true){
             try{
-                inputLong = Long.parseLong(readString(prompt));
+                inputLong = Long.parseLong(this.readString(prompt));
                 break;
             }
             catch (NumberFormatException ex){
-                System.out.println("Error: input not a long.");
+                this.print("Error: input not a long.");
             }
         }
         return inputLong;

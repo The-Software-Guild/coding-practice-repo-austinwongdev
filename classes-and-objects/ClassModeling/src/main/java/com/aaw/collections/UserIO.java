@@ -7,6 +7,8 @@
 
 package com.aaw.collections;
 
+import java.util.Map;
+
 /**
  *
  * @author Austin Wong
@@ -15,7 +17,11 @@ public interface UserIO {
     
     void print(String message);
     
+    void printHorizontalLine(int width);
+    
     String readString(String prompt);
+    
+    String readMenuString(Map<String, String> menu);
     
     int readInt(String prompt);
     
