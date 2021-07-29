@@ -28,6 +28,12 @@ public class UserIOImpl implements UserIO {
     }
     
     @Override
+    public void printWithLine(String message){
+        this.print(message);
+        this.printHorizontalLine(message.length());
+    }
+    
+    @Override
     public String readString(String prompt){
         this.print(prompt);
         Scanner scan = new Scanner(System.in);

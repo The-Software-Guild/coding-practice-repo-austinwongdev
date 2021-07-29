@@ -15,6 +15,9 @@ import java.util.Random;
  */
 public class Scratch {
     public static void main(String[] args){
-        
+        String test = "Alabama::Montgomery::205764::155.4";
+        for (String i : test.split("::")){
+            System.out.println(i);
+        }
     }
 }

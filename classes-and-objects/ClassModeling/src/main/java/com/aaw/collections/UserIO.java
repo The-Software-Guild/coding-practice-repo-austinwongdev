@@ -19,6 +19,8 @@ public interface UserIO {
     
     void printHorizontalLine(int width);
     
+    void printWithLine(String message);
+    
     String readString(String prompt);
     
     String readMenuString(Map<String, String> menu);
