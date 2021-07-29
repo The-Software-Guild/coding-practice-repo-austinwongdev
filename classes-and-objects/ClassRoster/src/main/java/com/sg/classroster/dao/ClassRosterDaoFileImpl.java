@@ -9,6 +9,7 @@ package com.sg.classroster.dao;
 
 import java.util.List;
 import com.sg.classroster.dto.Student;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,12 +23,13 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
     
     @Override
     public Student addStudent(String studentId, Student student){
-        throw new UnsupportedOperationException("Not supported yet.");
+        Student prevStudent = students.put(studentId, student);
+        return prevStudent;
     }
     
     @Override
     public List<Student> getAllStudents() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new ArrayList<Student>(students.values());
     }
 
     @Override
