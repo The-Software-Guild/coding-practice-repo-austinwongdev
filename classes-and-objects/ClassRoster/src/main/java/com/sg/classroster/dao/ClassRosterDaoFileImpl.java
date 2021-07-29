@@ -1,0 +1,43 @@
+/*
+ * @author Austin Wong
+ * email: austinwongdev@gmail.com
+ * date: Jul 29, 2021
+ * purpose: 
+ */
+
+package com.sg.classroster.dao;
+
+import java.util.List;
+import com.sg.classroster.dto.Student;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ *
+ * @author Austin Wong
+ */
+public class ClassRosterDaoFileImpl implements ClassRosterDao {
+
+    private Map<String, Student> students = new HashMap<>();
+    
+    @Override
+    public Student addStudent(String studentId, Student student){
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    @Override
+    public List<Student> getAllStudents() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Student getStudent(String studentId) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Student removeStudent(String studentId) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+}
