@@ -8,7 +8,6 @@
 package com.sg.classroster.controller;
 
 import com.sg.classroster.dao.ClassRosterDao;
-import com.sg.classroster.dao.ClassRosterDaoFileImpl;
 import com.sg.classroster.dto.Student;
 import com.sg.classroster.ui.ClassRosterView;
 
@@ -18,8 +17,13 @@ import com.sg.classroster.ui.ClassRosterView;
  */
 public class ClassRosterController {
     
-    private ClassRosterView view = new ClassRosterView();
-    private ClassRosterDao dao = new ClassRosterDaoFileImpl();
+    private ClassRosterView view;
+    private ClassRosterDao dao;
+    
+    public ClassRosterController(ClassRosterDao dao, ClassRosterView view){
+        this.dao = dao;
+        this.view = view;
+    }
     
     public void run(){
         boolean keepGoing = true;
