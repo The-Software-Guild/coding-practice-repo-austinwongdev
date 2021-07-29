@@ -112,4 +112,9 @@ public class ClassRosterView {
         }
         io.readString("Please hit enter to continue");
     }
+    
+    public void displayErrorMessage(String errorMsg){
+        io.print("=== ERROR ===");
+        io.print(errorMsg);
+    }
 }
