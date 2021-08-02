@@ -8,6 +8,8 @@
 package com.sg.classroster;
 
 import com.sg.classroster.controller.ClassRosterController;
+import com.sg.classroster.dao.ClassRosterAuditDao;
+import com.sg.classroster.dao.ClassRosterAuditDaoFileImpl;
 import com.sg.classroster.dao.ClassRosterDao;
 import com.sg.classroster.dao.ClassRosterDaoFileImpl;
 import com.sg.classroster.service.ClassRosterServiceLayer;
@@ -25,8 +27,9 @@ public class App {
         UserIO myIo = new UserIOConsoleImpl();
         ClassRosterView myView = new ClassRosterView(myIo);
         ClassRosterDao myDao = new ClassRosterDaoFileImpl();
+        ClassRosterAuditDao myAuditDao = new ClassRosterAuditDaoFileImpl();
         ClassRosterServiceLayer myService = 
-                new ClassRosterServiceLayerImpl(myDao);
+                new ClassRosterServiceLayerImpl(myDao, myAuditDao);
         ClassRosterController controller = 
                 new ClassRosterController(myService, myView);
         controller.run();
