@@ -14,10 +14,18 @@ import java.util.Random;
  * @author Austin Wong
  */
 public class Scratch {
-    public static void main(String[] args){
-        String test = "Alabama::Montgomery::205764::155.4";
-        for (String i : test.split("::")){
-            System.out.println(i);
-        }
+    
+    static String name = "Betty";
+    
+    public Scratch(){
+        
     }
+    
+    public static void main(String[] args){
+        String delimiter = "::";
+        String data = delimiter;
+        String[] strArr = data.split(delimiter);
+        System.out.println(strArr.length);
+    }
+    
 }

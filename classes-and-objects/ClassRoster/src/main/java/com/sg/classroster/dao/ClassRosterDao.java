@@ -16,11 +16,11 @@ import java.util.List;
  */
 public interface ClassRosterDao {
 
-    Student addStudent(String studentId, Student student) throws ClassRosterDaoException;
+    Student addStudent(String studentId, Student student) throws ClassRosterPersistenceException;
     
-    List<Student> getAllStudents() throws ClassRosterDaoException;
+    List<Student> getAllStudents() throws ClassRosterPersistenceException;
     
-    Student getStudent(String studentId) throws ClassRosterDaoException;
+    Student getStudent(String studentId) throws ClassRosterPersistenceException;
     
     /**
      * Description
@@ -29,6 +29,6 @@ public interface ClassRosterDao {
      * @return Student object that was removed or null if no student was
      * associated with the given student id
      */
-    Student removeStudent(String studentId) throws ClassRosterDaoException;
+    Student removeStudent(String studentId) throws ClassRosterPersistenceException;
     
 }
