@@ -7,7 +7,7 @@
 
 package com.aaw.helloworld;
 
-import java.util.Random;
+import java.io.FileWriter;
 
 /**
  *
@@ -21,11 +21,9 @@ public class Scratch {
         
     }
     
-    public static void main(String[] args){
-        String delimiter = "::";
-        String data = delimiter;
-        String[] strArr = data.split(delimiter);
-        System.out.println(strArr.length);
+    public static void main(String[] args) throws Exception{
+        String testFile = "testroster.txt";
+        new FileWriter(testFile);
     }
     
 }
