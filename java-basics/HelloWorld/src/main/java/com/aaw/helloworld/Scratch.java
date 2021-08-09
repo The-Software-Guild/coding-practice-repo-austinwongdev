@@ -7,7 +7,8 @@
 
 package com.aaw.helloworld;
 
-import java.io.FileWriter;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
@@ -22,8 +23,15 @@ public class Scratch {
     }
     
     public static void main(String[] args) throws Exception{
-        String testFile = "testroster.txt";
-        new FileWriter(testFile);
+        Map<Integer, Integer> myMap = new TreeMap<>();
+        myMap.put(1, 10);
+        myMap.put(3, 30);
+        myMap.put(2, 20);
+        myMap.put(4, 40);
+        myMap.put(5, 50);
+        myMap.put(6, 60);
+        
+        myMap.values().forEach((val) -> System.out.println(val));
     }
     
 }
