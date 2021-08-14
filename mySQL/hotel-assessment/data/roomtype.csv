@@ -1,0 +1,4 @@
+﻿roomTypeId,description,standardOccupancy,maxOccupancy,basePrice,extraPersonPrice
+1,Single,2,2,149.99,NULL
+2,Double,2,4,174.99,10
+3,Suite,3,8,399.99,20

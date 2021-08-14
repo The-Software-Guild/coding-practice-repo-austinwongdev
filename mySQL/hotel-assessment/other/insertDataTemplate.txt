@@ -1,0 +1,1 @@
+mysqldump -p --user=root austinwonghoteldb table > C:/Files/Austin/mthree/repos/coding-practice-repo-austinwongdev/mySQL/hotel-assessment/scripts/table.sql
