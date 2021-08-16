@@ -108,13 +108,17 @@ ORDER BY res.startDate;
 SELECT r.roomNumber 'Room Number',
 	rr.reservationID 'Reservation ID',
     (rt.basePrice
-		+ @jacuzziFee := IF(r.roomNumber in (SELECT roomNumber FROM roomamenity ra WHERE amenityID = 3), 25, 0)
-        + @extraPersonFee := IF(rt.extraPersonPrice IS NULL, 0, IF(res.numAdults - rt.standardOccupancy <= 0, 0, rt.extraPersonPrice))
+		-- Jacuzzi Fee
+		+ IF(ra.amenityID IS NOT NULL, 25, 0)
+        -- Extra Person Fee
+        + IF(rt.extraPersonPrice IS NULL, 0, IF(res.numAdults - rt.standardOccupancy <= 0, 0, rt.extraPersonPrice * (res.numAdults - rt.standardOccupancy)))
         ) * DATEDIFF(res.endDate, res.startDate) 'Total Cost of Room'
 FROM room r
 	INNER JOIN roomtype rt ON rt.roomTypeID = r.roomTypeID
+    LEFT OUTER JOIN roomamenity ra ON ra.roomNumber = r.roomNumber AND ra.amenityID = 3
 	LEFT OUTER JOIN reservationroom rr ON rr.roomNumber = r.roomNumber
     LEFT OUTER JOIN reservation res on res.reservationID = rr.reservationID
+GROUP BY res.reservationID, r.roomNumber
 ORDER BY ISNULL(res.reservationID), res.reservationID, r.roomNumber;
 
 -- Result: 26 rows returned
@@ -142,7 +146,7 @@ ORDER BY ISNULL(res.reservationID), res.reservationID, r.roomNumber;
 -- '203', '20', '399.98'
 -- '401', '21', '1199.97'
 -- '206', '22', '449.97'
--- '301', '22', '629.97'
+-- '301', '22', '659.97'
 -- '302', '23', '699.96'
 -- '306', NULL, NULL
 -- '402', NULL, NULL
