@@ -19,19 +19,92 @@
 	
 		<!-- My code goes here -->
 		<div class="container">
-			<!-- Search bar -->
-			<div class="row">
+			<div id="mainPage">
+				<!-- Search bar -->
+				<div class="row">
+				
+					<div class="col-md-3">
+						<button type="button" id="createDvdButton" class="btn btn-primary">
+							Create Dvd
+						</button>
+					</div>
+					
+					<div class="col-md-2">
+						<button type="button" id="searchButton" class="btn btn-primary">
+							Search
+						</button>
+					</div>
+					
+					<div class="col-md-3">
+						<select class="custom-select">
+							<option selected>Search Category</option>
+							<option value="1">Title</option>
+							<option value="2">Release Year</option>
+							<option value="3">Director Name</option>
+							<option value="4">Rating</option>
+						</select>
+					</div>
+					
+					<div class="col-md-4 form-group row">
+						<input type="text" class="form-control" id="searchTerm" placeholder="Search Term" required>
+					</div>
+					
+				</div>
 			
+				<hr>
+				
+				<!-- Error Messages -->
+				<ul class="list-group" id="errorMessages"></ul>
 			
+				<!-- DVD Content -->
+				<div class="row">
+					<div class="col-md-12">
+				
+						<div id="dvdTableDiv">
+							<table id="dvdTable" class="table table-hover">
+								<thead>
+									<tr>
+										<th width="25%">Title</th>
+										<th width="25%">Release Date</th>
+										<th width="15%">Director</th>
+										<th width="10%">Rating</th>
+										<th width="25%"></th>
+									</tr>
+								</thead>
+								<tbody id="contentRows"></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
 			</div>
 			
-			<hr>
+			<div id="viewDvdPage">
 			
-			<!-- DVD Content -->
-			<div class="row">
-			
+				<h1 id="viewDvdHeading"></h1>
+				<hr>
+				<div class="row">
+					<label for="viewDvdReleaseYear" class="col-md-4 control-label">Release Year:</label>
+					<p class="col-md-8" id="viewDvdReleaseYear"></p>
+				</div>
+				<div class="row">
+					<label for="viewDvdDirector" class="col-md-4 control-label">Director:</label>
+					<p class="col-md-8" id="viewDvdDirector"></p>
+				</div>
+				<div class="row">
+					<label for="viewDvdRating" class="col-md-4 control-label">Rating:</label>
+					<p class="col-md-8" id="viewDvdRating"></p>
+				</div>
+				<div class="row">
+					<label for="viewDvdNotes" class="col-md-4 control-label">Notes:</label>
+					<p class="col-md-8" id="viewDvdNotes"></p>
+				</div>
+				
+				<div class="row">
+					<button type="button" id="backToMainPageButton" class="btn btn-primary">
+						Back
+					</button>
+				</div>
 			</div>
-		
 		</div>
 	
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
